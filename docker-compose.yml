@@ -1,0 +1,24 @@
+version: "3"
+
+services:
+
+    client-java:
+        build: ./eureka-client-java/build/jib-docker-context/
+        ports:
+        - "8091:8091"
+        depends_on:
+        - eureka-service
+        restart: always
+
+    client-java-2:
+        build: ./eureka-client-java-2/build/jib-docker-context/
+        ports:
+        - "8092:8092"
+        depends_on:
+        - eureka-service
+        restart: always
+
+    eureka-service:
+        build: ./eureka-service/build/jib-docker-context/
+        ports:
+        - "8761:8761"
