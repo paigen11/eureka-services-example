@@ -1,4 +1,5 @@
 rootProject.name = 'eureka'
 
 include 'eureka-client-java'
+include 'eureka-client-java-2'
 include 'eureka-service'

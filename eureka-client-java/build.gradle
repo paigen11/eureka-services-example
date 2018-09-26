@@ -48,3 +48,5 @@ dependencies {
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	testCompile('org.springframework.cloud:spring-cloud-starter-eurekaServer')
 }
+
+jibExportDockerContext.dependsOn(build)
