@@ -1,0 +1,20 @@
+{
+  "name": "eureka-client-node",
+  "version": "1.0.0",
+  "description": "Simple Node App with Eureka Discovery",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.homedepot.com/pxn5096/docker-thd-example.git"
+  },
+  "author": "Paige Niedringhaus",
+  "license": "ISC",
+  "dependencies": {
+    "eureka-js-client": "^4.4.1",
+    "express": "^4.16.3"
+  }
+}
