@@ -22,3 +22,12 @@ services:
         build: ./eureka-service/build/jib-docker-context/
         ports:
         - "8761:8761"
+        restart: always
+
+    client-node:
+        build: ./eureka-client-node/
+        ports: 
+        - "3000:3000"
+        depends_on:
+        - eureka-service
+        restart: always
