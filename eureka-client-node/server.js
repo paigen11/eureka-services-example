@@ -9,7 +9,7 @@ const HOST = '0.0.0.0';
 const app = express();
 
 // example configuration
-const eureka = new Eureka({
+const client = new Eureka({
   // application instance information
   instance: {
     app: 'a-node-service',
@@ -40,17 +40,17 @@ var javaInstance = '';
 var java2Instance = '';
 var nodeInstance = '';
 
-eureka.logger.level('debug');
-eureka.start(error => {
+client.logger.level('debug');
+client.start(error => {
   console.log(error || 'NodeJS Eureka Started!');
 
-  javaInstance = eureka.getInstancesByAppId('A-JAVA-SERVICE');
+  javaInstance = client.getInstancesByAppId('A-JAVA-SERVICE');
   // console.log(javaInstance);
 
-  java2Instance = eureka.getInstancesByAppId('ANOTHER-JAVA-SERVICE');
+  java2Instance = client.getInstancesByAppId('ANOTHER-JAVA-SERVICE');
   // console.log(java2Instance);
 
-  nodeInstance = eureka.getInstancesByAppId('A-NODE-SERVICE');
+  nodeInstance = client.getInstancesByAppId('A-NODE-SERVICE');
   // console.log(nodeInstance);
 
   // App
@@ -77,6 +77,7 @@ eureka.start(error => {
 
   console.log(java2Url);
 
+  // get java 2 service info endpoint
   app.get(`/serviceInfo/${java2Url}`, (req, res) => {
     res.send(JSON.stringify(java2Instance), null, 2);
     res.end();
@@ -88,6 +89,7 @@ eureka.start(error => {
 
   console.log(nodeUrl);
 
+  // get node service info endpoint
   app.get(`/serviceInfo/${nodeUrl}`, (req, res) => {
     res.send(JSON.stringify(nodeInstance), null, 2);
     res.end();
