@@ -45,12 +45,12 @@ eureka.start(error => {
   console.log(error || 'NodeJS Eureka Started!');
 
   javaInstance = eureka.getInstancesByAppId('A-JAVA-SERVICE');
-  console.log(javaInstance);
+  // console.log(javaInstance);
 
   java2Instance = eureka.getInstancesByAppId('ANOTHER-JAVA-SERVICE');
-  console.log(java2Instance);
+  // console.log(java2Instance);
 
-  // nodeInstance = eureka.getInstancesByAppId('A-NODE-SERVICE');
+  nodeInstance = eureka.getInstancesByAppId('A-NODE-SERVICE');
   // console.log(nodeInstance);
 
   // App
