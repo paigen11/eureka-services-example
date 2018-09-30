@@ -1,4 +1,4 @@
-# Netflix Eureka, Docker, Java & NodeJS Example
+# Netflix Eureka, Java & NodeJS Example
 
 ## About This App
 
